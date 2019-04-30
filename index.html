@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Электронная очередь</title>
+
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        thead {
+            background: #585ea0;
+            color: white;
+            font-weight: bold;
+        }
+
+        tbody tr {
+            background: #f7f7f7;
+        }
+
+        tbody tr:nth-child(2n) {
+            background: #eaf1ff;
+        }
+
+        td {
+            padding: 15px;
+            border-left: 1px solid #dddddd;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 5px;
+            color: red;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid red;
+            background: transparent;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            color: white;
+            background: red;
+        }
+
+        img {
+            display: inline;
+            height: 1em;
+            line-height: 1em;
+            margin-bottom: -0.1em;
+            margin-right: 0.2em;
+        }
+
+        .order-part img {
+            margin-left: 2em;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+    </style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="js/websocket_worker.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<table cellspacing="2">
+    <thead>
+        <tr>
+            <td>Дата</td>
+            <td>Статус</td>
+            <td>Номер</td>
+            <td>Клиент</td>
+            <td>Части</td>
+            <td></td>
+        </tr>
+    </thead>
+
+    <tbody id="orders-queue-container">
+        <!--<tr>-->
+            <!--<td>17.04.2019</td>-->
+            <!--<td>new</td>-->
+            <!--<td>7777</td>-->
+            <!--<td>ИП Бородниченко Олег Геннадьевич</td>-->
+            <!--<td>7777Д/1 7777Д/2 7777Д/3 7777Д/4</td>-->
+            <!--<td><button>Удалить из очереди</button></td>-->
+        <!--</tr>-->
+    </tbody>
+</table>
+
+</body>
+</html>
