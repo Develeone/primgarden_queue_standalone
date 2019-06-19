@@ -80,7 +80,7 @@ var queue = {
 
   remove: function (data) {
     $('td:contains("' + data + '")').filter( function () {
-      return $(this).text() == data;
+      return $(this).text().length == data.length+2;
     }).first().parent().remove();
   },
 
