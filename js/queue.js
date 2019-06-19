@@ -79,7 +79,9 @@ var queue = {
   },
 
   remove: function (data) {
-    $('td:contains("' + data + '")').parent().remove();
+    $('td:contains("' + data + '")').filter( function () {
+      return $(this).text() == data;
+    }).first().parent().remove();
   },
 
   removeFromQueueRequest: function (number, isDelivery) {
