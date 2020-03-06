@@ -33,7 +33,7 @@ var queue = {
 
     for (var order in orders) {
       for (var deliveryType in orders[order].parts[0]) {
-        var orderParts = (deliveryType == "delivery" ? orders[order].parts[0].delivery.items : orders[order].parts[0].pickup.items)
+        var orderParts = (deliveryType == "delivery" ? orders[order].parts[0].delivery.items : orders[order].parts[0].pickup.items);
 
         var orderPartsString = "";
 
@@ -69,7 +69,7 @@ var queue = {
           '<td>' + orders[order].printName + '</td>' +
           '<td>' + orderPartsString + '</td>' +
           '<td>' +
-          '<button onclick="queue.removeFromQueueRequest('+orders[order].client_number+', '+ (deliveryType == "delivery" ? "1" : "0") +')">' +
+          '<button onclick="queue.removeFromQueueRequest(\''+orders[order].client_number+'\', '+ (deliveryType == "delivery" ? "1" : "0") +')">' +
           'Удалить из очереди' +
           '</button>' +
           '</td>' +
@@ -85,6 +85,8 @@ var queue = {
   },
 
   removeFromQueueRequest: function (number, isDelivery) {
+    console.log("Trying to remove ", number);
+    
     WebSocketWorker.SendMessage(JSON.stringify({
       action: "remove_form_queue",
       data: {

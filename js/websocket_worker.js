@@ -52,6 +52,7 @@ var WebSocketWorker = {
   },
 
   SendMessage : function (message) {
+    console.log("Sending message: " + message);
     this.connection.send(message);
   },
 
